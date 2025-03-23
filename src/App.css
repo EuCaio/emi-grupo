@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #3d7b80, #4c8a9e);
+  font-size: 16px;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-icon {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  background: url('/public/icon.png') center no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f8f8f8;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: #3d7b80;
+}
+
+/* Alinhando "Lembrar de mim" e "Esqueci a senha?" lado a lado */
+form .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #fff;
+  margin: 1rem 0;
+}
+
+form .options label {
+  display: flex;
+  align-items: center;
+}
+
+form .options input {
+  margin-right: 5px;
+  width: 20px;
+}
+
+form a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+form a:hover {
+  color: #0056b3;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3d7b80;
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+  background-color: #2f5c5d;
+  transform: translateY(-2px);
+}
+
+form button:active {
+  transform: translateY(1px);
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff; /* Agora o botão está branco */
+  text-decoration: none;
+  margin-top: 15px;
+  display: block;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #0056b3; /* Torna o botão um pouco mais claro ao passar o mouse */
+}
+
+.back-btn:focus {
+  outline: none;
+}
+

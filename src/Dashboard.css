@@ -1,0 +1,144 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #3d7b80;
+    color: white;
+  }
+  
+  .menu-bar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu-bar ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 0;
+  }
+  /* Estilos para o Dashboard */
+.dashboard-container {
+  position: relative;
+}
+
+.dashboard-content {
+  padding: 20px;
+}
+
+.calendar-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.calendar {
+  width: 80%;  /* Ajuste o tamanho do calendário */
+  height: 600px;  /* Tamanho reduzido do calendário */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: none;
+}
+
+/* Estilos para o chat bot */
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chat-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+}
+
+.chat-box {
+  display: none; /* Inicialmente escondido */
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box .chat-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+}
+
+.chat-box .chat-messages {
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.chat-box input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}
+
+.chat-button:hover + .chat-box {
+  display: block;
+}
+
+  .menu-bar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .menu-bar ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  .dashboard-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .calendar-container {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .calendar {
+    width: 100%;
+    height: 500px;
+    border: none;
+  }
+  
