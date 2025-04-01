@@ -4,12 +4,12 @@ import './App.css';
 import Cad from './cad'; 
 import Dashboard from './Dashboard'; 
 import Geasy from './Geasy';
+import Employees from "./Employees";
 
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
 
   const handleLogin = (e) => {
     e.preventDefault(); 
@@ -50,7 +50,6 @@ function Login() {
             onClick={() => navigate('/cadastro')}
           >
             Registrar-se          
-
           </button>            
           <div className="options">
             <label>
@@ -71,7 +70,8 @@ function App() {
         <Route path="/" element={<Geasy />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cad />} />
-        <Route path="/dashboard" element={<Dashboard />} /> 
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/employees" element={<Employees />} />
       </Routes>
     </Router>
   );
