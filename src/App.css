@@ -114,6 +114,7 @@ form button:active {
 }
 
 .back-btn {
+  background-color: #3d7b80;
   background: none;
   border: none;
   font-size: 16px;
@@ -127,7 +128,7 @@ form button:active {
 }
 
 .back-btn:hover {
-  color: #0056b3; /* Torna o botão um pouco mais claro ao passar o mouse */
+  color: #2f5c5d; /* Torna o botão um pouco mais claro ao passar o mouse */
 }
 
 .back-btn:focus {
