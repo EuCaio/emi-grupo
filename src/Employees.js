@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Importação para navegação
 import Sidebar from "./Sidebar";
-import "./Employees.css"; // Arquivo de estilização
+import "./Employees.css"; // Estilo da lista
 
 function Employees() {
   const employees = [
@@ -20,7 +21,9 @@ function Employees() {
           <ul className="employees-list">
             {employees.map((employee) => (
               <li key={employee.id} className="employee-item">
-                <strong>{employee.name}</strong> - {employee.role}
+                <Link to={`/employees/${employee.id}`}>
+                  <strong>{employee.name}</strong> - {employee.role}
+                </Link>
               </li>
             ))}
           </ul>

@@ -134,3 +134,68 @@ form button:active {
   outline: none;
 }
 
+/* Telas muito pequenas (até 360px) */
+@media (max-width: 360px) {
+  .login-card {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  form input,
+  form button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .user-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Smartphones (361px até 480px) */
+@media (max-width: 480px) {
+  .login-card {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  form .options {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .back-btn {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets e telas médias (481px até 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .login-container {
+    padding: 1rem;
+  }
+
+  .login-card {
+    max-width: 400px;
+    padding: 2rem;
+  }
+}
+
+/* Telas grandes (acima de 1024px) */
+@media (min-width: 1024px) {
+  .login-card {
+    max-width: 400px;
+    padding: 2.5rem;
+  }
+
+  form input,
+  form button {
+    font-size: 1rem;
+  }
+}

@@ -166,3 +166,91 @@ h1{
     text-shadow: 0 0 10px #ffde59, 0 0 30px #ffde59, 0 0 50px #ffde59;
   }
 }
+
+/* Pequenos dispositivos (celulares até 480px) */
+@media (max-width: 480px) {
+  .geasy-header h1 {
+    font-size: 2rem;
+  }
+
+  .geasy-header p,
+  .geasy-introduction p,
+  .feature-item p {
+    font-size: 0.95rem;
+  }
+
+  .geasy-introduction h2,
+  .geasy-features h2 {
+    font-size: 1.5rem;
+  }
+
+  .features-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-item {
+    width: 100%;
+  }
+
+  .geasy-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .geasy-container {
+    padding: 1rem;
+  }
+}
+
+/* Dispositivos médios (tablets de 481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .geasy-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .geasy-header p,
+  .geasy-introduction p {
+    font-size: 1rem;
+  }
+
+  .geasy-introduction h2,
+  .geasy-features h2 {
+    font-size: 2rem;
+  }
+
+  .feature-item {
+    width: 90%;
+  }
+
+  .geasy-btn {
+    font-size: 1.1rem;
+  }
+}
+
+/* Dispositivos grandes (notebooks entre 769px e 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .feature-item {
+    width: 45%;
+  }
+
+  .geasy-header h1 {
+    font-size: 3rem;
+  }
+
+  .geasy-btn {
+    font-size: 1.1rem;
+    padding: 0.9rem 2rem;
+  }
+}
+
+/* Telas muito grandes (desktops acima de 1024px) */
+@media (min-width: 1025px) {
+  .feature-item {
+    width: 280px;
+  }
+
+  .geasy-header h1 {
+    font-size: 4rem;
+  }
+}

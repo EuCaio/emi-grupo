@@ -1,32 +1,27 @@
 .calendar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 97%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px ;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .calendar-title {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #eef2f3; /* fundo claro para se misturar com dashboard */
+  padding: 40px;
+  width: auto;
+  min-height: 100vh;
+}
 
-  .emi-title {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 2px;
-  }
-  
-  .calendar-frame {
-    width: 90%;
-    max-width: 1000px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
+.calendar-title,
+.emi-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.calendar-frame {
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white; /* fundo branco sólido */
+  padding: 10px;
+}

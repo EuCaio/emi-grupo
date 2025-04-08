@@ -1,31 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
 function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <div className={`sidebar ${isOpen ? "open" : ""}`}>
-      <button
-        className="menu-button"
-        onClick={toggleSidebar}
-        aria-expanded={isOpen}
-        aria-label="Abrir ou fechar o menu lateral"
-      >
-        ☰
-      </button>
+    <div className="sidebar">
       <nav className="sidebar-menu">
         <ul>
           <li>
-            <Link to="/dashboard">Home</Link> {/* Agora leva ao Dashboard */}
+            <Link to="/dashboard">Home</Link>
           </li>
           <li>
-            <Link to="/employees">Funcionários</Link> {/* Agora leva à página de funcionários */}
+            <Link to="/employees">Funcionários</Link>
           </li>
         </ul>
       </nav>

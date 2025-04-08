@@ -5,6 +5,7 @@ import Cad from './cad';
 import Dashboard from './Dashboard'; 
 import Geasy from './Geasy';
 import Employees from "./Employees";
+import EmployeeDetail from "./EmployeeDetail"; // NOVO
 
 function Login() {
   const navigate = useNavigate();
@@ -72,6 +73,7 @@ function App() {
         <Route path="/cadastro" element={<Cad />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/employees" element={<Employees />} />
+        <Route path="/employees/:id" element={<EmployeeDetail />} /> {/* NOVO */}
       </Routes>
     </Router>
   );
