@@ -1,9 +1,17 @@
 .dashboard-content {
-  padding: 20px;
-  margin-left: 250px; /* Isso evita que o conteúdo sobreponha a sidebar */
   background-color: #eef2f3;
   min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-left: 250px;
 }
+
+
+
 
 .sidebar {
   position: fixed;
@@ -15,4 +23,18 @@
   color: white;
   padding: 20px;
   z-index: 1000;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
 }

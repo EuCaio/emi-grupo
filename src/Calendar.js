@@ -5,7 +5,6 @@ import "./Calendar.css"; // Arquivo de estilização
 function Calendar() {
   return (
     <div className="calendar-container">
-      <h1 className="emi-title">Aproveite o E.M.I</h1>
       <h1 className="calendar-title">Calendário</h1>
       <div className="calendar-frame">
         <iframe

@@ -1,0 +1,45 @@
+.custom-header {
+  width: 100%; /* ocupa toda a largura disponível */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #346e72;
+  color: white;
+  padding: 15px 30px;
+  border-bottom: 1px solid #2e5e62;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 12px 12px;
+  box-sizing: border-box; /* garante que padding não estoure a largura */
+}
+
+
+.user-name {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.name-input {
+  font-size: 22px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.profile-pic {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+.user-name:hover {
+  transform: scale(1.05);
+}

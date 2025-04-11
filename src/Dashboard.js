@@ -1,16 +1,18 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import Calendar from "./Calendar";
-import "./Dashboard.css"; 
-
-
+import Header from "./Header";
+import "./Dashboard.css";
 
 function Dashboard() {
   return (
-    <div className="dashboard-container">
+    <div className="dashboard-wrapper">
       <Sidebar />
-      <div className="dashboard-content">
-        <Calendar />
+      <div className="main-content">
+        <Header />
+        <div className="dashboard-content">
+          <Calendar />
+        </div>
       </div>
     </div>
   );

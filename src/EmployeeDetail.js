@@ -9,10 +9,13 @@ const employeeData = [
     name: "Caio Marques",
     role: "Desenvolvedor Full Stack",
     email: "caio@empresa.com",
+    hiring: "02/06/2022",
     workday: "Segunda a Sexta",
     dayoff: "Sábado e Domingo",
     overtime: "5 horas",
+    regulation: "CLT",
     attest: "1 atestado",
+    workload: "30 horas semanais",
     vocation: "15 dias",
     absence: "2 faltas",
     payment: "R$ 6.000,00",
@@ -22,10 +25,13 @@ const employeeData = [
     name: "Yuri Ferraz",
     role: "Desenvolvedor Full Stack",
     email: "yuri@empresa.com",
+    hiring: "22/05/2020",
     workday: "Segunda a Sexta",
     dayoff: "Sábado e Domingo",
     overtime: "2 horas",
+    regulation: "CLT",
     attest: "0 atestados",
+    workload: "34 horas semanais",
     vocation: "20 dias",
     absence: "0 faltas",
     payment: "R$ 5.500,00",
@@ -35,10 +41,13 @@ const employeeData = [
     name: "Eduardo Felipe",
     role: "Desenvolvedor Full Stack",
     email: "eduardo@empresa.com",
+    hiring: "08/02/2024",
     workday: "Segunda a Sexta",
     dayoff: "Sábado e Domingo",
     overtime: "3 horas",
+    regulation: "CLT",
     attest: "2 atestados",
+    workload: "30 horas semanais",
     vocation: "10 dias",
     absence: "1 falta",
     payment: "R$ 5.800,00",
@@ -48,10 +57,13 @@ const employeeData = [
     name: "Ruan Abreu",
     role: "Desenvolvedor Full Stack",
     email: "ruan@empresa.com",
+    hiring: "30/11/2021",
     workday: "Segunda a Sexta",
     dayoff: "Sábado e Domingo",
     overtime: "6 horas",
+    regulation: "PJ",
     attest: "1 atestado",
+    workload: "30 horas semanais",
     vocation: "15 dias",
     absence: "3 faltas",
     payment: "R$ 6.200,00",
@@ -61,10 +73,13 @@ const employeeData = [
     name: "Lucas Valença",
     role: "Desenvolvedor Full Stack",
     email: "lucas@empresa.com",
+    hiring: "15/09/2023",
     workday: "Segunda a Sexta",
     dayoff: "Sábado e Domingo",
     overtime: "4 horas",
+    regulation: "CLT",
     attest: "0 atestados",
+    workload: "30 horas semanais",
     vocation: "18 dias",
     absence: "0 faltas",
     payment: "R$ 5.900,00",
@@ -77,13 +92,24 @@ function EmployeeDetail() {
   const employee = employeeData.find((emp) => emp.id === parseInt(id));
 
   const [messages, setMessages] = useState([
-    { from: "funcionario", text: "Olá" },
+    {
+      from: "funcionario",
+      text: "Olá",
+      time: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    },
   ]);
   const [input, setInput] = useState("");
 
   const sendMessage = () => {
     if (input.trim()) {
-      setMessages([...messages, { from: "usuario", text: input }]);
+      const time = new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+      setMessages([...messages, { from: "usuario", text: input, time }]);
       setInput("");
     }
   };
@@ -103,9 +129,12 @@ function EmployeeDetail() {
           <div className="employee-info">
             <p><strong>Cargo:</strong> {employee.role}</p>
             <p><strong>Email:</strong> {employee.email}</p>
+            <p><strong>Dia da Contratação:</strong> {employee.hiring}</p>
             <p><strong>Dias de Trabalho:</strong> {employee.workday}</p>
-            <p><strong>Folga:</strong> {employee.dayoff}</p>
             <p><strong>Horas Extras:</strong> {employee.overtime}</p>
+            <p><strong>CLT ou PJ:</strong> {employee.regulation}</p>
+            <p><strong>Folga:</strong> {employee.dayoff}</p>
+            <p><strong>Carga Horária:</strong> {employee.workload}</p>
             <p><strong>Atestado:</strong> {employee.attest}</p>
             <p><strong>Férias:</strong> {employee.vocation}</p>
             <p><strong>Faltas:</strong> {employee.absence}</p>
@@ -117,7 +146,8 @@ function EmployeeDetail() {
             <div className="messages">
               {messages.map((msg, index) => (
                 <div key={index} className={`message ${msg.from}`}>
-                  {msg.text}
+                  <div>{msg.text}</div>
+                  <div className="message-time">{msg.time}</div>
                 </div>
               ))}
             </div>
