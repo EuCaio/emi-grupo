@@ -1,12 +1,16 @@
 .dashboard-content-notification {
     padding: 20px;
     background-color: white;
-    min-height: 100vh;
     flex: 1;
     border-radius: 10px;
     width: 300px;
-    margin-top: 30px;
+    margin: 30px auto; /* centraliza e substitui o margin-top isolado */
+    min-height: 60vh; /* aumentou de 100vh para 110vh */
+    max-height: calc(110vh - 60px); /* ajustado proporcionalmente */
+    overflow-y: auto; /* adiciona scroll se precisar */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* opcional, para destacar o card */
   }
+  
   
   .notifications-container {
     background-color: #ffffff;

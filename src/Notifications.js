@@ -11,6 +11,8 @@ function Notifications() {
           <h2>Notificações</h2>
           <ul className="notifications-list">
             <li>Nova Menssagem!</li>
+            <li>Nova Menssagem!</li>
+            <li>Nova Menssagem!</li>
           </ul>
         </div>
       </div>

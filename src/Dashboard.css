@@ -35,8 +35,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 20px;
   width: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 /* Responsividade */

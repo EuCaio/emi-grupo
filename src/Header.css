@@ -10,6 +10,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 0 0 12px 12px;
   box-sizing: border-box; /* garante que padding não estoure a largura */
+  margin-top: 15px;
+  border-radius: 10px;
 }
 
 

@@ -1,3 +1,11 @@
+/* Garantir que o conteúdo role normalmente */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 /* h1 global (fora da seção .geasy-header) */
 h1 {
   display: flex;
@@ -12,17 +20,15 @@ h1 {
 .geasy-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background: linear-gradient(to bottom, #191970, #111111);
   color: #fff;
   font-family: 'Arial', sans-serif;
   text-align: center;
-  overflow-y: auto;
   overflow-x: hidden;
   padding: 2rem;
   box-sizing: border-box;
+  width: 100%;
 }
 
 /* Header */
