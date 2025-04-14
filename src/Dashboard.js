@@ -4,12 +4,12 @@ import Calendar from "./Calendar";
 import Header from "./Header";
 import "./Dashboard.css";
 
-function Dashboard() {
+function Dashboard({ userRole }) {
   return (
     <div className="dashboard-wrapper">
       <Sidebar />
       <div className="main-content">
-        <Header />
+        <Header userRole={userRole} />
         <div className="dashboard-content">
           <Calendar />
         </div>

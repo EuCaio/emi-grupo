@@ -5,20 +5,24 @@ import Cad from './cad';
 import Dashboard from './Dashboard'; 
 import Geasy from './Geasy';
 import Employees from "./Employees";
-import EmployeeDetail from "./EmployeeDetail"; // NOVO
+import EmployeeDetail from "./EmployeeDetail";
 
-function Login() {
+function Login({ setUserRole }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
-    if (email && password) {
-      navigate('/dashboard');
+    if (email === "gerente@empresa.com" && password === "1234") {
+      setUserRole("gerente");
+      navigate("/dashboard");
+    } else if (email === "funcionario@empresa.com" && password === "1234") {
+      setUserRole("funcionario");
+      navigate("/dashboard");
     } else {
-      alert('Por favor, preencha todos os campos!');
+      alert("Credenciais inválidas");
     }
   };
 
@@ -43,7 +47,6 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)} 
           />
-
           <button type="submit">Entrar</button>
           <button
             type="button"
@@ -65,15 +68,17 @@ function Login() {
 }
 
 function App() {
+  const [userRole, setUserRole] = useState(null);
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Geasy />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setUserRole={setUserRole} />} />
         <Route path="/cadastro" element={<Cad />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/employees" element={<Employees />} />
-        <Route path="/employees/:id" element={<EmployeeDetail />} /> {/* NOVO */}
+        <Route path="/dashboard" element={<Dashboard userRole={userRole} />} />
+        <Route path="/employees" element={<Employees userRole={userRole} />} />
+        <Route path="/employees/:id" element={<EmployeeDetail userRole={userRole} />} />
       </Routes>
     </Router>
   );

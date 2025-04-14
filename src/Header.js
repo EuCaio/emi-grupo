@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
 
-function Header() {
+function Header({ userRole }) {
   const [userName, setUserName] = useState("Empresa");
   const [editingName, setEditingName] = useState(false);
   const [profilePic, setProfilePic] = useState(null);
@@ -21,7 +21,7 @@ function Header() {
   return (
     <header className="custom-header">
       <div className="header-left">
-        {editingName ? (
+        {userRole === "gerente" && editingName ? (
           <input
             className="name-input"
             value={userName}
@@ -30,27 +30,31 @@ function Header() {
             autoFocus
           />
         ) : (
-          <h2 onClick={toggleEditing} className="user-name">{userName}</h2>
+          <h2
+            onClick={userRole === "gerente" ? toggleEditing : undefined}
+            className="user-name"
+          >
+            {userName}
+          </h2>
         )}
       </div>
       <div className="header-right">
         <label htmlFor="profile-upload" className="profile-label">
           <img
-            src={
-              profilePic ||
-              "https://www.w3schools.com/howto/img_avatar.png"
-            }
+            src={profilePic || "https://www.w3schools.com/howto/img_avatar.png"}
             alt="Profile"
             className="profile-pic"
           />
         </label>
-        <input
-          id="profile-upload"
-          type="file"
-          accept="image/*"
-          onChange={handleProfilePicChange}
-          style={{ display: "none" }}
-        />
+        {userRole === "gerente" && (
+          <input
+            id="profile-upload"
+            type="file"
+            accept="image/*"
+            onChange={handleProfilePicChange}
+            style={{ display: "none" }}
+          />
+        )}
       </div>
     </header>
   );

@@ -86,7 +86,7 @@ const employeeData = [
   },
 ];
 
-function EmployeeDetail() {
+function EmployeeDetail({ userRole }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const employee = employeeData.find((emp) => emp.id === parseInt(id));
@@ -129,16 +129,21 @@ function EmployeeDetail() {
           <div className="employee-info">
             <p><strong>Cargo:</strong> {employee.role}</p>
             <p><strong>Email:</strong> {employee.email}</p>
-            <p><strong>Dia da Contratação:</strong> {employee.hiring}</p>
-            <p><strong>Dias de Trabalho:</strong> {employee.workday}</p>
-            <p><strong>Horas Extras:</strong> {employee.overtime}</p>
-            <p><strong>CLT ou PJ:</strong> {employee.regulation}</p>
-            <p><strong>Folga:</strong> {employee.dayoff}</p>
-            <p><strong>Carga Horária:</strong> {employee.workload}</p>
-            <p><strong>Atestado:</strong> {employee.attest}</p>
-            <p><strong>Férias:</strong> {employee.vocation}</p>
-            <p><strong>Faltas:</strong> {employee.absence}</p>
-            <p><strong>Salário:</strong> {employee.payment}</p>
+
+            {userRole === "gerente" && (
+              <>
+                <p><strong>Dia da Contratação:</strong> {employee.hiring}</p>
+                <p><strong>Dias de Trabalho:</strong> {employee.workday}</p>
+                <p><strong>Folga:</strong> {employee.dayoff}</p>
+                <p><strong>Horas Extras:</strong> {employee.overtime}</p>
+                <p><strong>CLT ou PJ:</strong> {employee.regulation}</p>
+                <p><strong>Atestado:</strong> {employee.attest}</p>
+                <p><strong>Carga Horária:</strong> {employee.workload}</p>
+                <p><strong>Férias:</strong> {employee.vocation}</p>
+                <p><strong>Faltas:</strong> {employee.absence}</p>
+                <p><strong>Salário:</strong> {employee.payment}</p>
+              </>
+            )}
           </div>
 
           <div className="chat-box">
