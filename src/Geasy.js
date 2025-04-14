@@ -7,6 +7,7 @@ const Geasy = () => {
 
   return (
     <div className="geasy-container">
+      <section className="geasy-introduction">
       <header className="geasy-header">
         <h1>E.M.I</h1>
         <button
@@ -16,8 +17,7 @@ const Geasy = () => {
           Acesse Agora
         </button>
       </header>
-
-      <section className="geasy-introduction">
+        
         <h2>O que é o E.M.I?</h2>
         <p>
           O E.M.I (Easy Management Interface ou Interface de Gestão Fácil) é 
