@@ -1,19 +1,18 @@
-/* Garantir que o conteúdo role normalmente */
-html, body {
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* h1 global (fora da seção .geasy-header) */
-h1 {
-  display: flex;
-  padding-top: 2em;
-  padding-bottom: 1.5rem;
-  font-size: 2.5rem;
-  justify-content: center;
-  text-align: center;
+html, body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #191970, #111111);
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
 /* Container principal */
@@ -21,97 +20,78 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to bottom, #191970, #111111);
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-  overflow-x: hidden;
-  padding: 2rem;
-  box-sizing: border-box;
-  width: 100%;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Header */
 .geasy-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
+  text-align: center;
   animation: fadeIn 1s ease-in-out;
 }
 
 .geasy-header h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
   color: #ffde59;
   text-transform: uppercase;
+  margin-bottom: 1rem;
   animation: textGlow 2s infinite ease-in-out;
 }
 
-.geasy-header p {
-  font-size: 1.5rem;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  line-height: 1.8;
-}
-
-/* Botão principal */
 .geasy-btn {
   background-color: #ffde59;
   color: #333;
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
+  padding: 1rem 2rem;
   font-weight: bold;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s;
+  font-size: 1.1rem;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .geasy-btn:hover {
   background-color: #e6c400;
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(255, 214, 0, 0.6);
 }
 
 /* Introdução */
 .geasy-introduction {
-  margin: 2rem 0;
   text-align: center;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .geasy-introduction h2 {
-  font-size: 2.5rem;
-  color: #ffde59;
+  font-size: 2rem;
   margin-bottom: 1rem;
+  color: #ffde59;
 }
 
 .geasy-introduction p {
-  font-size: 1.2rem;
-  max-width: 900px;
+  font-size: 1.1rem;
+  max-width: 800px;
   margin: 0 auto;
-  line-height: 1.8;
+  color: #eee;
 }
 
 /* Features */
 .geasy-features {
-  padding: 2rem;
   width: 100%;
+  text-align: center;
 }
 
 .geasy-features h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
   color: #ffde59;
+  margin-bottom: 2rem;
 }
 
 .features-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 
 .feature-item {
@@ -120,19 +100,17 @@ h1 {
   padding: 1.5rem;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  width: 280px;
-  text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .feature-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .feature-item h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
   color: #1d2671;
 }
 
@@ -141,13 +119,14 @@ h1 {
   color: #555;
 }
 
-/* Rodapé */
+/* Footer */
 .geasy-footer {
-  color: #bbb;
-  padding: 2rem;
-  font-size: 0.9rem;
-  text-align: center;
   width: 100%;
+  text-align: center;
+  color: #bbb;
+  font-size: 0.9rem;
+  padding: 2rem 1rem 1rem;
+  border-top: 1px solid #333;
 }
 
 .geasy-footer a {
@@ -180,52 +159,38 @@ h1 {
   }
 }
 
-/* Responsivo: Tablets */
+/* Responsividade adicional */
 @media (max-width: 768px) {
-  .geasy-header h1 {
-    font-size: 3rem;
-  }
-
-  .geasy-header p,
-  .geasy-introduction p {
-    font-size: 1.1rem;
-    padding: 0 1rem;
-  }
-
-  .feature-item {
-    width: 90%;
-  }
-}
-
-/* Responsivo: Celulares */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
   .geasy-header h1 {
     font-size: 2.2rem;
   }
 
-  .geasy-header p,
-  .geasy-introduction p {
+  .geasy-btn {
+    padding: 0.8rem 1.5rem;
     font-size: 1rem;
+  }
+
+  .geasy-introduction h2,
+  .geasy-features h2 {
+    font-size: 1.6rem;
+  }
+
+  .feature-item h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .geasy-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .geasy-header h1 {
+    font-size: 1.8rem;
   }
 
   .geasy-btn {
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-  }
-
-  .features-list {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .feature-item {
     width: 100%;
-    padding: 1rem;
+    font-size: 1rem;
   }
 }
