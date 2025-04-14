@@ -14,6 +14,7 @@
   color: white;
   padding: 20px;
   z-index: 1000;
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Conteúdo principal ao lado da sidebar */
@@ -23,6 +24,7 @@
   display: flex;
   flex-direction: column;
   height: 650px;
+  transition: margin-left 0.3s ease-in-out;
 }
 
 /* Conteúdo abaixo do header */
@@ -35,4 +37,25 @@
   justify-content: flex-start;
   padding: 20px;
   width: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: absolute;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .dashboard-content {
+    padding: 10px;
+  }
 }

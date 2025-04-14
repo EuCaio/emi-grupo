@@ -6,6 +6,7 @@ import Dashboard from './Dashboard';
 import Geasy from './Geasy';
 import Employees from "./Employees";
 import EmployeeDetail from "./EmployeeDetail";
+import Notifications from "./Notifications";
 
 function Login({ setUserRole }) {
   const [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ function Login({ setUserRole }) {
       setUserRole("funcionario");
       navigate("/dashboard");
     } else {
-      alert("Credenciais inválidas");
+      alert("Email ou Senha Incorretos!");
     }
   };
 
@@ -79,6 +80,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard userRole={userRole} />} />
         <Route path="/employees" element={<Employees userRole={userRole} />} />
         <Route path="/employees/:id" element={<EmployeeDetail userRole={userRole} />} />
+        <Route path="/notifications" element={<Notifications />} />
       </Routes>
     </Router>
   );

@@ -1,8 +1,14 @@
-h1{
+/* h1 global (fora da seção .geasy-header) */
+h1 {
   display: flex;
   padding-top: 2em;
   padding-bottom: 1.5rem;
+  font-size: 2.5rem;
+  justify-content: center;
+  text-align: center;
 }
+
+/* Container principal */
 .geasy-container {
   display: flex;
   flex-direction: column;
@@ -16,6 +22,7 @@ h1{
   overflow-y: auto;
   overflow-x: hidden;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -23,7 +30,7 @@ h1{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;    
+  align-items: center;
   margin-bottom: 2rem;
   animation: fadeIn 1s ease-in-out;
 }
@@ -43,6 +50,7 @@ h1{
   line-height: 1.8;
 }
 
+/* Botão principal */
 .geasy-btn {
   background-color: #ffde59;
   color: #333;
@@ -61,7 +69,7 @@ h1{
   box-shadow: 0 5px 15px rgba(255, 214, 0, 0.6);
 }
 
-
+/* Introdução */
 .geasy-introduction {
   margin: 2rem 0;
   text-align: center;
@@ -81,7 +89,7 @@ h1{
   line-height: 1.8;
 }
 
-
+/* Features */
 .geasy-features {
   padding: 2rem;
   width: 100%;
@@ -127,9 +135,8 @@ h1{
   color: #555;
 }
 
-
+/* Rodapé */
 .geasy-footer {
-
   color: #bbb;
   padding: 2rem;
   font-size: 0.9rem;
@@ -146,7 +153,7 @@ h1{
   text-decoration: underline;
 }
 
-
+/* Animações */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -167,46 +174,33 @@ h1{
   }
 }
 
-/* Pequenos dispositivos (celulares até 480px) */
-@media (max-width: 480px) {
+/* Responsivo: Tablets */
+@media (max-width: 768px) {
   .geasy-header h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .geasy-header p,
-  .geasy-introduction p,
-  .feature-item p {
-    font-size: 0.95rem;
-  }
-
-  .geasy-introduction h2,
-  .geasy-features h2 {
-    font-size: 1.5rem;
-  }
-
-  .features-list {
-    flex-direction: column;
-    align-items: center;
+  .geasy-introduction p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
   }
 
   .feature-item {
-    width: 100%;
-  }
-
-  .geasy-btn {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  .geasy-container {
-    padding: 1rem;
+    width: 90%;
   }
 }
 
-/* Dispositivos médios (tablets de 481px a 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Responsivo: Celulares */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .geasy-header h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .geasy-header p,
@@ -214,43 +208,18 @@ h1{
     font-size: 1rem;
   }
 
-  .geasy-introduction h2,
-  .geasy-features h2 {
-    font-size: 2rem;
-  }
-
-  .feature-item {
-    width: 90%;
-  }
-
   .geasy-btn {
-    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
   }
-}
 
-/* Dispositivos grandes (notebooks entre 769px e 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
+  .features-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .feature-item {
-    width: 45%;
-  }
-
-  .geasy-header h1 {
-    font-size: 3rem;
-  }
-
-  .geasy-btn {
-    font-size: 1.1rem;
-    padding: 0.9rem 2rem;
-  }
-}
-
-/* Telas muito grandes (desktops acima de 1024px) */
-@media (min-width: 1025px) {
-  .feature-item {
-    width: 280px;
-  }
-
-  .geasy-header h1 {
-    font-size: 4rem;
+    width: 100%;
+    padding: 1rem;
   }
 }

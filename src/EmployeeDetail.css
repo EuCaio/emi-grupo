@@ -3,6 +3,7 @@
   padding: 20px;
   background-color: #f9f9f9;
   margin-left: 250px;
+  transition: margin-left 0.3s ease-in-out;
 }
 
 .back-btn {
@@ -49,7 +50,7 @@
 
   display: flex;
   flex-direction: column;
-  height: 450px; /* altura fixa para permitir rolagem */
+  height: 450px;
 }
 
 .messages {
@@ -74,7 +75,6 @@
   margin-top: 4px;
   text-align: right;
 }
-
 
 .message.usuario {
   background-color: #d1e7dd;
@@ -112,4 +112,47 @@
 
 .input-area button:hover {
   background-color: #29575a;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .employee-detail {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .employee-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .chat-box,
+  .employee-info {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .input-area {
+    flex-direction: column;
+  }
+
+  .input-area input,
+  .input-area button {
+    width: 100%;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .chat-box {
+    height: 400px;
+  }
 }

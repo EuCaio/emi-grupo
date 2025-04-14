@@ -1,4 +1,4 @@
-/* Sidebar.css */
+/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -16,6 +16,11 @@
   left: 0;
 }
 
+.sidebar.open.fullscreen {
+  left: 0;
+  width: 100%; /* Faz a sidebar ocupar toda a largura da tela */
+}
+
 .menu-button {
   position: fixed;
   top: 20px;
@@ -27,6 +32,7 @@
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
+  z-index: 2000; /* Certifique-se que o botão está sobre a sidebar */
 }
 
 .menu-button:hover {
@@ -53,4 +59,27 @@
   background: #306468;
   display: block;
   border-radius: 5px;
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* A sidebar ocupa toda a largura da tela */
+    left: -100%; /* Começa fora da tela */
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar.open.fullscreen {
+    left: 0;
+    width: 100%; /* Ocupa a tela inteira */
+  }
+
+  .menu-button {
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+  }
 }

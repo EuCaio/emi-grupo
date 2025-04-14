@@ -25,3 +25,30 @@
   background-color: white;
   padding: 10px;
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .calendar-title {
+    font-size: 20px;
+    margin-top: -20px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+  }
+
+  .calendar-frame {
+    padding: 5px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-title {
+    font-size: 18px;
+  }
+
+  .calendar-frame {
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
