@@ -62,7 +62,18 @@
   /* Responsivo para telas menores */
   @media (max-width: 768px) {
     .notifications-container {
-    margin-top: 20px;
+    margin-top: 85px;
+    padding: 15px;
+    }
+  
+    .notifications-list {
+    width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .dashboard-content-notification  {
+    margin-top: 85px;
     padding: 15px;
     }
   
