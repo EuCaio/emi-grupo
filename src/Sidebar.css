@@ -91,7 +91,7 @@
   .sidebar {
     width: 100%; /* A sidebar ocupa toda a largura da tela */
     left: -100%; /* Começa fora da tela */
-    height: 100%;
+    height: 100vh;
   }
 
   .sidebar.open {
