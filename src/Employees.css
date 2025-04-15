@@ -55,6 +55,29 @@ h1 {
   color: inherit;
 }
 
+.remove-button {
+  background: transparent;
+  border: none;
+  color: #d11a2a;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+}
+
+.remove-button:hover {
+  background-color: rgb(202, 202, 202);
+  border-radius: 10px;
+  padding: 1px;
+
+}
+
+.employee-item {
+  position: relative; /* necessário para posicionar o botão */
+}
+
 /* Responsivo para tablets */
 @media (max-width: 768px) {
   .employees-container {

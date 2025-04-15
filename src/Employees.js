@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import "./Employees.css";
 
-const employeeData = [
+const initialEmployeeData = [
   {
     id: 1,
     name: "Caio Marques",
@@ -37,10 +37,16 @@ const employeeData = [
 ];
 
 function Employees({ userRole }) {
+  const [employees, setEmployees] = useState(initialEmployeeData);
   const navigate = useNavigate();
 
   const handleEmployeeClick = (id) => {
     navigate(`/employees/${id}`);
+  };
+
+  const handleRemoveEmployee = (e, id) => {
+    e.stopPropagation(); // impede que o clique remova e também navegue
+    setEmployees((prev) => prev.filter((emp) => emp.id !== id));
   };
 
   return (
@@ -49,7 +55,7 @@ function Employees({ userRole }) {
       <div className="employees-container">
         <h1>Lista de Funcionários</h1>
         <ul className="employees-list">
-          {employeeData.map((employee) => (
+          {employees.map((employee) => (
             <li
               key={employee.id}
               className="employee-item"
@@ -59,6 +65,14 @@ function Employees({ userRole }) {
                 <p><strong>Nome:</strong> {employee.name}</p>
                 <p><strong>Cargo:</strong> {employee.role}</p>
               </div>
+              {userRole === "gerente" && (
+              <button
+                className="remove-button"
+                onClick={(e) => handleRemoveEmployee(e, employee.id)}
+              >
+                ✕
+              </button>
+              )}
             </li>
           ))}
         </ul>
