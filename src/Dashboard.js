@@ -7,7 +7,7 @@ import "./Dashboard.css";
 function Dashboard({ userRole }) {
   return (
     <div className="dashboard-wrapper">
-      <Sidebar />
+      <Sidebar userRole={userRole}  />
       <div className="main-content">
         <Header userRole={userRole} />
         <div className="dashboard-content">

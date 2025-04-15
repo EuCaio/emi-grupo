@@ -86,10 +86,38 @@ const employeeData = [
   },
 ];
 
+function EditableField({ label, value, onChange }) {
+  const [editing, setEditing] = useState(false);
+  const [tempValue, setTempValue] = useState(value);
+
+  const handleBlur = () => {
+    setEditing(false);
+    onChange(tempValue);
+  };
+
+  return (
+    <p onClick={() => setEditing(true)} style={{ cursor: "pointer" }}>
+      <strong>{label}:</strong>{" "}
+      {editing ? (
+        <input
+          type="text"
+          value={tempValue}
+          onChange={(e) => setTempValue(e.target.value)}
+          onBlur={handleBlur}
+          autoFocus
+        />
+      ) : (
+        value
+      )}
+    </p>
+  );
+}
+
 function EmployeeDetail({ userRole }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const employee = employeeData.find((emp) => emp.id === parseInt(id));
+  const [employeeState, setEmployeeState] = useState({ ...employee });
 
   const [messages, setMessages] = useState([
     {
@@ -132,16 +160,27 @@ function EmployeeDetail({ userRole }) {
 
             {userRole === "gerente" && (
               <>
-                <p><strong>Dia da Contratação:</strong> {employee.hiring}</p>
-                <p><strong>Dias de Trabalho:</strong> {employee.workday}</p>
-                <p><strong>Folga:</strong> {employee.dayoff}</p>
-                <p><strong>Horas Extras:</strong> {employee.overtime}</p>
-                <p><strong>CLT ou PJ:</strong> {employee.regulation}</p>
-                <p><strong>Atestado:</strong> {employee.attest}</p>
-                <p><strong>Carga Horária:</strong> {employee.workload}</p>
-                <p><strong>Férias:</strong> {employee.vocation}</p>
-                <p><strong>Faltas:</strong> {employee.absence}</p>
-                <p><strong>Salário:</strong> {employee.payment}</p>
+                {[
+                  ["Dia da Contratação", "hiring"],
+                  ["Dias de Trabalho", "workday"],
+                  ["Folga", "dayoff"],
+                  ["Horas Extras", "overtime"],
+                  ["CLT ou PJ", "regulation"],
+                  ["Atestado", "attest"],
+                  ["Carga Horária", "workload"],
+                  ["Férias", "vocation"],
+                  ["Faltas", "absence"],
+                  ["Salário", "payment"],
+                ].map(([label, key]) => (
+                  <EditableField
+                    key={key}
+                    label={label}
+                    value={employeeState[key]}
+                    onChange={(newValue) =>
+                      setEmployeeState({ ...employeeState, [key]: newValue })
+                    }
+                  />
+                ))}
               </>
             )}
           </div>

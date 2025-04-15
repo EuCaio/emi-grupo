@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
-function Sidebar() {
+function Sidebar({ userRole }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -17,7 +17,7 @@ function Sidebar() {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
-      if (window.innerWidth > 768) setIsOpen(true); // Sidebar aberta automaticamente em telas grandes
+      if (window.innerWidth > 768) setIsOpen(true);
     };
 
     handleResize();
@@ -35,7 +35,9 @@ function Sidebar() {
       )}
 
       <div
-        className={`sidebar ${isOpen ? "open" : ""} ${isMobile && isOpen ? "fullscreen" : ""}`}
+        className={`sidebar ${isOpen ? "open" : ""} ${
+          isMobile && isOpen ? "fullscreen" : ""
+        }`}
       >
         <nav className="sidebar-menu">
           <ul>
@@ -55,11 +57,17 @@ function Sidebar() {
               </Link>
             </li>
           </ul>
-          <div className="invite-button-container">
-            <button className="invite-button" onClick={() => alert("Link de convite gerado!")}>
-              + Criar link de convite
-            </button>
-          </div>
+
+          {userRole === "gerente" && (
+            <div className="invite-button-container">
+              <button
+                className="invite-button"
+                onClick={() => alert("Link de convite gerado!")}
+              >
+                + Criar link de convite
+              </button>
+            </div>
+          )}
         </nav>
       </div>
     </>
