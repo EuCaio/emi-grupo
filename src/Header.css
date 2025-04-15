@@ -45,3 +45,10 @@
 .user-name:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+  .custom-header {
+    margin-top: 100px;
+
+  }
+}
