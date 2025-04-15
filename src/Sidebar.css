@@ -61,6 +61,31 @@
   border-radius: 5px;
 }
 
+.invite-button-container {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.invite-button {
+  background: white;
+  color: #1e1e2f;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.invite-button:hover {
+  background: rgb(196, 196, 196);
+}
+
+
 /* Responsivo para telas pequenas */
 @media (max-width: 768px) {
   .sidebar {

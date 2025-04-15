@@ -55,6 +55,11 @@ function Sidebar() {
               </Link>
             </li>
           </ul>
+          <div className="invite-button-container">
+            <button className="invite-button" onClick={() => alert("Link de convite gerado!")}>
+              + Criar link de convite
+            </button>
+          </div>
         </nav>
       </div>
     </>
