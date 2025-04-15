@@ -62,11 +62,12 @@
   /* Responsivo para telas menores */
   @media (max-width: 600px) {
     .notifications-container {
-      padding: 15px;
+    margin-top: 20px;
+    padding: 15px;
     }
   
     .notifications-list {
-      width: 100%;
+    width: 100%;
     }
   }
   
