@@ -58,7 +58,6 @@ function Employees({ userRole }) {
               <div className="employee-info">
                 <p><strong>Nome:</strong> {employee.name}</p>
                 <p><strong>Cargo:</strong> {employee.role}</p>
-                <p><strong>Email:</strong> {employee.email}</p>
               </div>
             </li>
           ))}
