@@ -1,94 +1,161 @@
-/* Geasy.css */
-
-.geasy-container {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #e6ecf4;
-  background-color: #041a3b;
-  padding: 2rem;
-  box-sizing: border-box;
+/* Garantir que o conteúdo role normalmente */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-.geasy-introduction {
-  background: linear-gradient(135deg, #102542, #1c355e);
-  color: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
+/* h1 global (fora da seção .geasy-header) */
+h1 {
+  display: flex;
+  padding-top: 2em;
+  padding-bottom: 1.5rem;
+  font-size: 2.5rem;
+  justify-content: center;
   text-align: center;
-  margin-bottom: 3rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
-.geasy-introduction p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+/* Container principal */
+.geasy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #191970, #111111);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  width: 100%;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  flex-grow: 1;
+  min-height: 100vh;
 }
 
+/* Header */
+.geasy-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.geasy-header h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #ffde59;
+  text-transform: uppercase;
+  animation: textGlow 2s infinite ease-in-out;
+}
+
+.geasy-header p {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+/* Botão principal */
 .geasy-btn {
-  background-color: #1c355e;
-  color: #ffffff;
+  background-color: #ffde59;
+  color: #333;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
   border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 30px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
 .geasy-btn:hover {
-  background-color: #294e80;
+  background-color: #e6c400;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 214, 0, 0.6);
 }
 
-.geasy-features {
-  padding: 2rem 1rem;
+/* Introdução */
+.geasy-introduction {
+  margin: 2rem 0;
   text-align: center;
+  padding: 1rem;
+}
+
+.geasy-introduction h2 {
+  font-size: 2.5rem;
+  color: #ffde59;
+  margin-bottom: 1rem;
+}
+
+.geasy-introduction p {
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Features */
+.geasy-features {
+  padding: 2rem;
+  width: 100%;
 }
 
 .geasy-features h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #c3d2ee;
+  color: #ffde59;
 }
 
 .features-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .feature-item {
-  background-color: #162237;
+  background-color: #fff;
+  color: #333;
   padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .feature-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .feature-item h3 {
-  color: #91b4f0;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1d2671;
 }
 
 .feature-item p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  color: #cbd6e5;
+  font-size: 1rem;
+  color: #555;
 }
 
+/* Rodapé */
 .geasy-footer {
-  margin-top: 3rem;
-  padding: 2rem 1rem;
-  text-align: center;
+  color: #bbb;
+  padding: 2rem;
   font-size: 0.9rem;
-  color: #7f8fa6;
+  text-align: center;
+  width: 100%;
 }
 
 .geasy-footer a {
-  color: #91b4f0;
+  color: #ffde59;
   text-decoration: none;
 }
 
@@ -96,18 +163,73 @@
   text-decoration: underline;
 }
 
-/* Responsividade extra */
-@media (max-width: 600px) {
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px #ffde59, 0 0 20px #ffde59, 0 0 30px #ffde59;
+  }
+  50% {
+    text-shadow: 0 0 10px #ffde59, 0 0 30px #ffde59, 0 0 50px #ffde59;
+  }
+}
+
+/* Responsivo: Tablets */
+@media (max-width: 768px) {
+  .geasy-header h1 {
+    font-size: 3rem;
+  }
+
+  .geasy-header p,
+  .geasy-introduction p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .feature-item {
+    width: 90%;
+  }
+}
+
+/* Responsivo: Celulares */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .geasy-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .geasy-header p,
   .geasy-introduction p {
     font-size: 1rem;
   }
 
   .geasy-btn {
-    width: 100%;
+    padding: 0.8rem 2rem;
     font-size: 1rem;
   }
 
-  .geasy-features h2 {
-    font-size: 1.5rem;
+  .features-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .feature-item {
+    width: 100%;
+    padding: 1rem;
   }
 }
