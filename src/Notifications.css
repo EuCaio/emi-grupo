@@ -60,7 +60,7 @@
   }
   
   /* Responsivo para telas menores */
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .notifications-container {
     margin-top: 20px;
     padding: 15px;
