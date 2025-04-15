@@ -1,136 +1,94 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
+/* Geasy.css */
+
+.geasy-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e6ecf4;
+  background-color: #041a3b;
+  padding: 2rem;
   box-sizing: border-box;
 }
 
-html, body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, #191970, #111111);
-  color: #fff;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-
-/* Container principal */
-.geasy-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Header */
-.geasy-header {
-  text-align: center;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.geasy-header h1 {
-  font-size: 2.8rem;
-  color: #ffde59;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  animation: textGlow 2s infinite ease-in-out;
-}
-
-.geasy-btn {
-  background-color: #ffde59;
-  color: #333;
-  padding: 1rem 2rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: transform 0.3s, background-color 0.3s;
-}
-
-.geasy-btn:hover {
-  background-color: #e6c400;
-  transform: scale(1.05);
-}
-
-/* Introdução */
 .geasy-introduction {
+  background: linear-gradient(135deg, #102542, #1c355e);
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
   text-align: center;
-  padding: 0 1rem;
-}
-
-.geasy-introduction h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #ffde59;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .geasy-introduction p {
   font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #eee;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-/* Features */
+.geasy-btn {
+  background-color: #1c355e;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.geasy-btn:hover {
+  background-color: #294e80;
+}
+
 .geasy-features {
-  width: 100%;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
 .geasy-features h2 {
   font-size: 2rem;
-  color: #ffde59;
   margin-bottom: 2rem;
+  color: #c3d2ee;
 }
 
 .features-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
 .feature-item {
-  background-color: #fff;
-  color: #333;
+  background-color: #162237;
   padding: 1.5rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
 }
 
 .feature-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .feature-item h3 {
-  font-size: 1.5rem;
+  color: #91b4f0;
   margin-bottom: 0.5rem;
-  color: #1d2671;
 }
 
 .feature-item p {
-  font-size: 1rem;
-  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #cbd6e5;
 }
 
-/* Footer */
 .geasy-footer {
-  width: 100%;
+  margin-top: 3rem;
+  padding: 2rem 1rem;
   text-align: center;
-  color: #bbb;
   font-size: 0.9rem;
-  padding: 2rem 1rem 1rem;
-  border-top: 1px solid #333;
+  color: #7f8fa6;
 }
 
 .geasy-footer a {
-  color: #ffde59;
+  color: #91b4f0;
   text-decoration: none;
 }
 
@@ -138,59 +96,18 @@ html, body {
   text-decoration: underline;
 }
 
-/* Animações */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes textGlow {
-  0%, 100% {
-    text-shadow: 0 0 5px #ffde59, 0 0 20px #ffde59, 0 0 30px #ffde59;
-  }
-  50% {
-    text-shadow: 0 0 10px #ffde59, 0 0 30px #ffde59, 0 0 50px #ffde59;
-  }
-}
-
-/* Responsividade adicional */
-@media (max-width: 768px) {
-  .geasy-header h1 {
-    font-size: 2.2rem;
-  }
-
-  .geasy-btn {
-    padding: 0.8rem 1.5rem;
+/* Responsividade extra */
+@media (max-width: 600px) {
+  .geasy-introduction p {
     font-size: 1rem;
-  }
-
-  .geasy-introduction h2,
-  .geasy-features h2 {
-    font-size: 1.6rem;
-  }
-
-  .feature-item h3 {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .geasy-container {
-    padding: 1.5rem 1rem;
-  }
-
-  .geasy-header h1 {
-    font-size: 1.8rem;
   }
 
   .geasy-btn {
     width: 100%;
     font-size: 1rem;
+  }
+
+  .geasy-features h2 {
+    font-size: 1.5rem;
   }
 }

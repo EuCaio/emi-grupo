@@ -8,17 +8,6 @@ const Geasy = () => {
   return (
     <div className="geasy-container">
       <section className="geasy-introduction">
-      <header className="geasy-header">
-        <h1>E.M.I</h1>
-        <button
-          className="geasy-btn"
-          onClick={() => navigate("/login")}
-        >
-          Acesse Agora
-        </button>
-      </header>
-        
-        <h2>O que é o E.M.I?</h2>
         <p>
           O E.M.I (Easy Management Interface ou Interface de Gestão Fácil) é 
           uma plataforma digital desenvolvida para conectar
@@ -27,6 +16,13 @@ const Geasy = () => {
           envio de documentos ou resolução de dúvidas, o E.M.I transforma a
           experiência do usuário.
         </p>
+        <button
+          className="geasy-btn"
+          onClick={() => navigate("/login")}
+        >
+          Acesse Agora
+        </button>
+
       </section>
 
       <section className="geasy-features">
