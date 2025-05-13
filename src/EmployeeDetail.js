@@ -165,7 +165,7 @@ function EmployeeDetail({ userRole }) {
                   ["Dias de Trabalho", "workday"],
                   ["Folga", "dayoff"],
                   ["Horas Extras", "overtime"],
-                  ["Regime", "regulation"],
+                  ["Contrato", "regulation"],
                   ["Atestado", "attest"],
                   ["Carga Horária", "workload"],
                   ["Férias", "vocation"],
